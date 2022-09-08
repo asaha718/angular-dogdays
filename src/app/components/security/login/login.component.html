@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="login-page">
+  <div class="header-ctn">
+    <h1>Welcome to DogDays</h1>
+    <h4>A Web App to Rent a Dog for a Day</h4>
+  </div>
+  <div class="login-form-ctn">
+    <h3>LogIn</h3>
+    <form>
+      <div class="form-group">
+        <label> Username: </label>
+        <input [(ngModel)]="authRequest.username" name="Username" />
+      </div>
+      <div class="form-group">
+        <label> Password: </label>
+        <input
+          [(ngModel)]="authRequest.password"
+          name="Password"
+          type="password"
+        />
+      </div>
+      <button (click)="loginUser()">Login</button>
+    </form>
+  </div>
+
+  <div>{{response}}</div>
+</div>

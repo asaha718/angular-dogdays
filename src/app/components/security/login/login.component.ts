@@ -31,4 +31,8 @@ export class LoginComponent implements OnInit {
     resp.subscribe(data => this.response = data);
   }
 
+  loginUser(){ 
+    this.getAccessToken(this.authRequest)
+  }
+
 }
