@@ -1,0 +1,16 @@
+.header-banner{ 
+    display: flex;
+    justify-content: space-between;
+    background-color: #F27059;
+    height: 10vh;
+    align-items: center;
+}
+
+.logo, .user-info{ 
+    margin: 1vh 3vw;
+}
+
+.logo{ 
+    font-family: 'Lora', serif;
+    font-size: 32px;
+}

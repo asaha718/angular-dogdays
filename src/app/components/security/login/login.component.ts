@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JwtClientService } from 'src/app/services/jwt-client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,24 +16,24 @@ export class LoginComponent implements OnInit {
 
   response: any;
 
-  constructor(private service:JwtClientService) { }
+  constructor(private service: JwtClientService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
-  getAccessToken(authRequest:any) {
+  loginUser() {
+    this.getAccessToken(this.authRequest); 
+    this.router.navigate(["/home"]);
+  }
+
+  getAccessToken(authRequest: any) {
     let resp = this.service.generateToken(authRequest);
     resp.subscribe(data => this.accessApi(data));
   }
 
-
-  accessApi(token:string) {
+  accessApi(token: string) {
     let resp = this.service.welcome(token);
     resp.subscribe(data => this.response = data);
-  }
-
-  loginUser(){ 
-    this.getAccessToken(this.authRequest)
   }
 
 }
