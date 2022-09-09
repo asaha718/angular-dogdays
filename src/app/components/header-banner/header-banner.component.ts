@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { JwtClientService } from 'src/app/services/jwt-client.service';
 
 @Component({
   selector: 'app-header-banner',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderBannerComponent implements OnInit {
 
-  constructor() { }
+  userName: string= ""; 
+
+  constructor(private service: JwtClientService) {
+  }
 
   ngOnInit(): void {
+    // this.getUsername(); 
   }
+
+  // getUsername(): void{ 
+  //   this.service.welcome(this.service.accessToken, this.service.username).subscribe( data=> this.userName= data.username)
+  // }
 
 }
