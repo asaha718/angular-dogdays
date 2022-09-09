@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/security/login/login.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { HeaderBannerComponent } from './components/header-banner/header-banner.component';
-
+import { JwtClientService } from './services/jwt-client.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,7 @@ import { HeaderBannerComponent } from './components/header-banner/header-banner.
     FormsModule, 
     HttpClientModule
   ],
-  providers: [],
+  providers: [JwtClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
