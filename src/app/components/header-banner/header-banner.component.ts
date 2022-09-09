@@ -19,17 +19,14 @@ export class HeaderBannerComponent implements OnInit {
   }; 
 
   constructor(
-    private service: JwtClientService, 
     private lsService: LocalStorageService, 
     private userService: UserService) {
   }
 
   ngOnInit(): void {
-    //methods below are not occuring quick enough to fetch the user api
     this.token = this.getAccessToken(); 
     this.username = this.getUsername(); 
 
-    //needs access token and username
     this.getUser(); 
   }
 
@@ -43,7 +40,6 @@ export class HeaderBannerComponent implements OnInit {
   
   getUser(): void{ 
     this.userService.getUser(this.token, this.username).subscribe(data => this.userInfo = data)
-    //is not working due to not having token and username from local storage
   }
 
 }
