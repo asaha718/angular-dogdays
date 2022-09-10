@@ -1,1 +1,37 @@
-<p>create-dog works!</p>
+<div>
+  <h2>Create your Dog</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="name">Dog name: </label>
+      <input
+        [(ngModel)]="createdDog.name"
+        id="name"
+        type="text"
+        class="form-control"
+        required
+      />
+      <div class="alert alert-danger" *ngIf="" >Dog's name is required</div>
+    </div>
+    <div class="form-group">
+      <label for="age">Dog Age: </label>
+      <input
+        [(ngModel)]="createdDog.age"
+        id="age"
+        type="number"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="breed">Dog breed: </label>
+      <input
+        [(ngModel)]="createdDog.breed"
+        id="breed"
+        type="text"
+        class="form-control"
+      />
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
