@@ -14,7 +14,9 @@ export class UserProfilePageComponent implements OnInit {
   username: string | null = "";
   token: string | null = "";
 
-  userInfo?: UserResponseDTO;
+  userInfo: UserResponseDTO = { 
+    username: ""
+  };
 
   constructor(private lsService: LocalStorageService,
      private userService: UserService) { }

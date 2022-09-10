@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CreateDogComponent } from './components/forms/create-dog/create-dog.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/security/login/login.component';
 import { UserProfilePageComponent } from './components/user-profile-page/user-profile-page.component';
 
 const routes: Routes = [
+  { path: "userprofile/:id", component: UserProfilePageComponent}, 
+  {path: ":id/create-dog", component: CreateDogComponent},  
   {path: "login", component: LoginComponent}, 
   {path: "home", component: HomePageComponent},
-  {path: "userprofile/:id", component: UserProfilePageComponent},  
   {path:"", redirectTo: "/login", pathMatch: 'full'}
 ];
 

@@ -3,3 +3,7 @@
         <h1>{{userInfo.username | uppercase}}</h1>
     </div>
 </div>
+
+<div *ngIf="userInfo.ownDog">
+    <button routerLink="/userInfo.id/create-dog" type="button" class="btn btn-primary">Add a Dog</button>
+</div>
