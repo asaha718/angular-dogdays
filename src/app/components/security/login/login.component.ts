@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this.getAccessToken(this.authRequest);
-    
   }
 
   getAccessToken(authRequest: any) {

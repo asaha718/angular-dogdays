@@ -1,4 +1,11 @@
 <div class="header-banner">
   <div class="logo">DogDays</div>
-  <div class="user-info">Welcome, {{userInfo.username}}</div>
+  <div class="user-info">
+    Welcome,
+    <span>
+      <a routerLink="userprofile/{{userInfo.id}}">
+        {{userInfo.username}}
+      </a>
+    </span>
+  </div>
 </div>
