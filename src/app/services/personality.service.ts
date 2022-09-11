@@ -13,7 +13,7 @@ export class PersonalityService {
   getPersonalities(token: string | null): Observable<Personality[]>{ 
     let tokenStr = 'Bearer ' + token;
     const headers = new HttpHeaders().set('Authorization', tokenStr);
-    return this.httpClient.get<Personality[]>("http://localhost:8080/api/personality", { headers })
+    return this.httpClient.get<Personality[]>("http://localhost:8080/api/personalities", { headers })
       .pipe(map(resp => resp))
   }
 }

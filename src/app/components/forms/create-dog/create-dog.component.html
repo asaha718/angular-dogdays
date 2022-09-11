@@ -6,17 +6,19 @@
       <label for="name">Dog name: </label>
       <input
         [(ngModel)]="createdDog.name"
+        name="name"
         id="name"
         type="text"
         class="form-control"
         required
       />
-      <div class="alert alert-danger" *ngIf="" >Dog's name is required</div>
+      <div class="alert alert-danger">Dog's name is required</div>
     </div>
     <div class="form-group">
       <label for="age">Dog Age: </label>
       <input
         [(ngModel)]="createdDog.age"
+        name="age"
         id="age"
         type="number"
         class="form-control"
@@ -26,12 +28,13 @@
       <label for="breed">Dog breed: </label>
       <input
         [(ngModel)]="createdDog.breed"
+        name="breed"
         id="breed"
         type="text"
         class="form-control"
       />
     </div>
 
-    <button class="btn btn-primary">Submit</button>
+    <button (click)="onDogCreate(createdDog)" class="btn btn-primary">Submit</button>
   </form>
 </div>
