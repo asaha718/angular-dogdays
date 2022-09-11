@@ -1,4 +1,3 @@
-import { DogOwner } from "./dog-owner";
 import { Personality } from "./personality";
 
 export interface Dog {
@@ -6,6 +5,6 @@ export interface Dog {
     name:string, 
     age:number, 
     breed:string, 
-    personalities: Personality[], 
-    owner?: DogOwner
+    personalityIds: number[], 
+    ownerId?: number
 }

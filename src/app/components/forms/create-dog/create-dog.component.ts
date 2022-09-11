@@ -22,8 +22,8 @@ export class CreateDogComponent implements OnInit {
     name: '',
     age: 0,
     breed: '',
-    personalities: [],
-    owner: undefined
+    personalityIds: [],
+    ownerId: undefined
   }
 
   constructor(private jwtService: JwtClientService,
@@ -45,27 +45,28 @@ export class CreateDogComponent implements OnInit {
   }
 
   onDogCreate(createdDog: Dog) {
+    console.log()
     this.dogService.addDog(this.token, this.createdDog).subscribe(dog => {
       this.router.navigate(["/userprofile/ownerId"]);
       createdDog = {
         name: '',
         age: 0,
         breed: '',
-        personalities: [],
-        owner: undefined
+        personalityIds: [],
+        ownerId: 0
       }
     })
   }
 
   getOwnerId() {
     this.route.paramMap.subscribe(paramMap => {
-      this.createdDog.owner = { id: Number(paramMap.get('id')) };
+      this.createdDog.ownerId = Number(paramMap.get('id'));
+      console.log("params", this.createdDog )
     })
   }
 
   getPersonalities() {
     this.personalityService.getPersonalities(this.token).subscribe(p => {
-      console.log("all personalities", p); 
       this.personalities = p; 
     })
   }
