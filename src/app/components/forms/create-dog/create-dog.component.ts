@@ -45,9 +45,8 @@ export class CreateDogComponent implements OnInit {
   }
 
   onDogCreate(createdDog: Dog) {
-    console.log()
     this.dogService.addDog(this.token, this.createdDog).subscribe(dog => {
-      this.router.navigate(["/userprofile/ownerId"]);
+      this.router.navigate([`/userprofile/${this.createdDog.ownerId}`]);
       createdDog = {
         name: '',
         age: 0,
@@ -61,7 +60,6 @@ export class CreateDogComponent implements OnInit {
   getOwnerId() {
     this.route.paramMap.subscribe(paramMap => {
       this.createdDog.ownerId = Number(paramMap.get('id'));
-      console.log("params", this.createdDog )
     })
   }
 
