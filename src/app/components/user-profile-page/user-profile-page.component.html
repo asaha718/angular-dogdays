@@ -1,9 +1,34 @@
-<div>
-    <div>
-        <h1>{{userInfo.username | uppercase}}</h1>
+<app-header-banner></app-header-banner>
+<div class="user-profile-page">
+  <div class="header-ctn">
+    <div class="username-ctn">
+      <h1>{{userInfo.username | uppercase}} Profile</h1>
     </div>
-</div>
+  </div>
 
-<div *ngIf="userInfo.ownDog">
-    <button routerLink="/{{userInfo.id}}/create-dog" type="button" class="btn btn-primary">Add a Dog</button>
+  <div class="dog-owner-ctn" *ngIf="userInfo.ownDog">
+    <div class="add-dog-btn-ctn">
+      <button
+        routerLink="/{{userInfo.id}}/create-dog"
+        type="button"
+        class="btn btn-primary"
+      >
+        Add a Dog
+      </button>
+    </div>
+
+    <div class="owner-dog-ctn">
+      <h3>Your Dogs:</h3>
+      <div *ngFor="let dog of userInfo.ownedDogs">
+        <div class="dog-ctn">
+          <img class="dog-profile-img" src="../../../assets/img/gray_dog.jpg" />
+          <div class="card-body">
+            <h2 class="card-title">{{dog.name}}</h2>
+            <h4 class="card-subtitle">Age: {{dog.age}}</h4>
+            <h4 class="card-subtitle">Breed: {{dog.breed}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
