@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { DogService } from 'src/app/services/dog.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { UserResponseDTO } from 'src/app/dtos/user-response-dto';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-user-profile-page',
@@ -19,7 +19,9 @@ export class UserProfilePageComponent implements OnInit {
   };
 
   constructor(private lsService: LocalStorageService,
-     private userService: UserService) { }
+     private userService: UserService, 
+     private dogService: DogService, 
+    ) { }
 
   ngOnInit(): void {
     this.token = this.getAccessToken(); 
@@ -39,4 +41,7 @@ export class UserProfilePageComponent implements OnInit {
     this.userService.getUser(this.token, this.username).subscribe(data => this.userInfo = data)
   }
 
+  deleteDog(dogId:number | undefined):void{ 
+    this.dogService.deleteDog(this.token, dogId).subscribe(x => this.getUser()); 
+  }
 }

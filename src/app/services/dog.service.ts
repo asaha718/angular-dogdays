@@ -32,7 +32,7 @@ export class DogService {
       .pipe(map(resp => resp))
   }
 
-  deleteDog(token: string | null, id: number): Observable<unknown>{ 
+  deleteDog(token: string | null, id: number | undefined): Observable<unknown>{ 
     let tokenStr = 'Bearer ' + token;
     const headers = new HttpHeaders().set('Authorization', tokenStr);
     return this.http.delete(`http://localhost:8080/api/dogs/${id}`, { headers })
