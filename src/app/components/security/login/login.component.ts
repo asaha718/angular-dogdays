@@ -15,12 +15,10 @@ export class LoginComponent implements OnInit {
     "password": ""
   };
 
-  response: any;
-
-  constructor(private service: JwtClientService, 
-    private router: Router, 
-    private lsService:LocalStorageService
-    ) { }
+  constructor(private service: JwtClientService,
+    private router: Router,
+    private lsService: LocalStorageService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -32,10 +30,10 @@ export class LoginComponent implements OnInit {
   getAccessToken(authRequest: any) {
     this.lsService.set("username", authRequest.username)
     this.service.generateToken(authRequest)
-    .subscribe(data => {
-      this.lsService.set("token", data); 
-      this.router.navigate(["/home"]);
-    });
+      .subscribe(data => {
+        this.lsService.set("token", data);
+        this.router.navigate(["/home"]);
+      });
   }
 
 }
