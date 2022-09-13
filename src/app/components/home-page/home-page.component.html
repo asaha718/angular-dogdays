@@ -1,3 +1,17 @@
 <app-header-banner></app-header-banner>
+<div class="home-page">
+  <h2>Welcome to the home page!</h2>
 
-<h2>Welcome to the home page!</h2>
+  <div class="all-dogs-ctn">
+    <div *ngFor="let dog of allDogs">
+      <div class="dog-ctn">
+        <img class="dog-profile-img" src="../../../assets/img/gray_dog.jpg" />
+        <div class="card-body">
+          <h2 class="card-title">{{dog.name}}</h2>
+          <h4 class="card-subtitle">Age: {{dog.age}}</h4>
+          <h4 class="card-subtitle">Breed: {{dog.breed}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

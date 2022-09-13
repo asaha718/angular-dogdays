@@ -1,0 +1,16 @@
+.dog-ctn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vh 4vw;
+    padding: 6px;
+    background-color: #F4845F;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 24vw;
+}
+
+.dog-profile-img {
+    height: 28vh;
+    width: 16vw;
+}
