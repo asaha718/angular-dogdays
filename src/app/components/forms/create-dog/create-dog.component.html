@@ -1,6 +1,8 @@
+<app-header-banner></app-header-banner>
+
 <!-- template driven form -->
-<div>
-  <h2>Create your Dog</h2>
+<div class="create-dog-form">
+  <h2>Create Your Dog</h2>
 
   <form>
     <div class="form-group">
@@ -63,9 +65,10 @@
         >
       </select>
     </div>
-
-    <button (click)="onDogCreate(createdDog)" class="btn btn-primary">
-      Submit
-    </button>
+    <div class="create-btn-ctn">
+      <button (click)="onDogCreate(createdDog)" class="btn btn-primary">
+        Submit
+      </button>
+    </div>
   </form>
 </div>

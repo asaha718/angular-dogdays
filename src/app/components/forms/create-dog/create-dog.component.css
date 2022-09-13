@@ -1,0 +1,24 @@
+.create-dog-form{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-dog-form h2{ 
+    margin: 4vh 3vw;
+}
+
+.create-dog-form form .form-group{ 
+    margin: 2vh 1vw;
+}
+
+.create-dog-form form{
+    border: solid 3px #F25C54;
+    border-radius: 8px;
+}
+
+.create-btn-ctn{ 
+    display: flex;
+    justify-content: center;
+    margin: 2vh 1vw;
+}
