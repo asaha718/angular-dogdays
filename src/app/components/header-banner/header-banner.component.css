@@ -13,4 +13,5 @@
 .logo{ 
     font-family: 'Lora', serif;
     font-size: 32px;
+    cursor: pointer;
 }

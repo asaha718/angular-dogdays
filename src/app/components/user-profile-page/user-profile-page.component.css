@@ -4,6 +4,7 @@
     align-items: center;
     margin: 2vh 4vw;
     padding: 6px;
+    background-color: #F4845F;
     border: 2px solid black;
     border-radius: 10px;
     width: 24vw;
@@ -25,4 +26,10 @@ text-align: center
 .owner-dog-ctn{ 
     display: flex;
     flex-wrap: wrap;
+}
+
+.delete-dog-btn-ctn{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
 }
