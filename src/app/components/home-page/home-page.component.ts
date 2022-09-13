@@ -26,6 +26,6 @@ export class HomePageComponent implements OnInit {
   }
 
   getDogs(): void {
-    this.dogService.getDogs(this.token).subscribe(dogs => { this.allDogs = dogs; console.log("all dogs", dogs) })
+    this.dogService.getDogs(this.token).subscribe(dogs => { this.allDogs = dogs })
   }
 }

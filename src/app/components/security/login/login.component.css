@@ -28,6 +28,11 @@
 .login-form-ctn h3{ 
     margin: 2vh;
 }
+
 .login-form-ctn form .form-group{ 
     margin: 2vh 1vw;
+}
+
+.guest-login-btn-ctn{ 
+    margin: 1vh;
 }

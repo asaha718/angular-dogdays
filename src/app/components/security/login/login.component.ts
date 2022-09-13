@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JwtClientService } from 'src/app/services/jwt-client.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { Router } from '@angular/router';
+import { LoginDTO } from 'src/app/dtos/login-dto';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +11,15 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  authRequest: any = {
+  authRequest: LoginDTO = {
     "username": "",
     "password": ""
   };
+
+  guestAuthRequest: LoginDTO = { 
+    "username": "GuestUser",
+    "password": "password123"
+  }
 
   constructor(private service: JwtClientService,
     private router: Router,
@@ -21,6 +27,10 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  guestLogin(){ 
+    this.getAccessToken(this.guestAuthRequest); 
   }
 
   loginUser() {
