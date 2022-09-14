@@ -1,4 +1,4 @@
 export interface Personality {
-    id: number, 
+    id?: number, 
     trait: string
 }

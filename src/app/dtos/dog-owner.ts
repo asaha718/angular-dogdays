@@ -1,3 +1,4 @@
 export interface DogOwner {
-    id:number
+    id:number, 
+    username?:string
 }
