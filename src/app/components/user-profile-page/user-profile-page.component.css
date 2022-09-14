@@ -28,7 +28,17 @@ text-align: center
     flex-wrap: wrap;
 }
 
+.dog-owner-ctn h3{ 
+    margin-left: 2vw;
+}
+
 .delete-dog-btn-ctn{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.update-dog-btn-ctn{ 
     display: flex;
     justify-content: center;
     margin: 5px;

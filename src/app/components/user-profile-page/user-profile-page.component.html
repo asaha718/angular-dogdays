@@ -17,9 +17,8 @@
       </button>
     </div>
 
-    
-      <h3>Your Dogs:</h3>
-      <div class="owner-dog-ctn">
+    <h3>Your Dogs:</h3>
+    <div class="owner-dog-ctn">
       <div *ngFor="let dog of userInfo.ownedDogs">
         <div class="dog-ctn">
           <img class="dog-profile-img" src="../../../assets/img/gray_dog.jpg" />
@@ -27,13 +26,22 @@
             <h2 class="card-title">{{dog.name}}</h2>
             <h4 class="card-subtitle">Age: {{dog.age}}</h4>
             <h4 class="card-subtitle">Breed: {{dog.breed}}</h4>
-            <div class="delete-dog-btn-ctn">
-              <button type="button" class="btn btn-danger" (click)="deleteDog(dog.id)">
-                Remove {{dog.name}}
+            <div class="update-dog-btn-ctn">
+              <button
+                routerLink="/{{userInfo.id}}/update-dog/{{dog.id}}"
+                class="btn btn-warning"
+              >
+                Update {{dog.name}}
               </button>
             </div>
-            <div class="update-dog-btn-ctn">
-              <button routerLink="/{{userInfo.id}}/update-dog/{{dog.id}}"> Update {{dog.name}} </button>
+            <div class="delete-dog-btn-ctn">
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="deleteDog(dog.id)"
+              >
+                Remove {{dog.name}}
+              </button>
             </div>
           </div>
         </div>
