@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CreateDogDto } from 'src/app/dtos/create-dog-dto';
 import { Dog } from 'src/app/dtos/dog';
 import { DogOwner } from 'src/app/dtos/dog-owner';
 import { Personality } from 'src/app/dtos/personality';
@@ -18,13 +19,13 @@ export class CreateDogComponent implements OnInit {
   ownerId: number | undefined;
   personalities?: Personality[]
 
-  createdDog: Dog = {
-    name: '',
-    age: 0,
-    breed: '',
+  createdDog: CreateDogDto = {
+    name: "",
+    age: 1,
+    breed: "",
     personalityIds: [],
-    ownerId: undefined
-  }
+    ownerId: undefined,
+  };
 
   constructor(private jwtService: JwtClientService,
     private router: Router,
@@ -44,15 +45,16 @@ export class CreateDogComponent implements OnInit {
     return this.lsService.get("token")
   }
 
-  onDogCreate(createdDog: Dog) {
+  onDogCreate(createdDog: CreateDogDto) {
+    console.log("createDog object", createdDog); 
     this.dogService.addDog(this.token, createdDog).subscribe(dog => {
-      this.router.navigate([`/userprofile/${this.createdDog.ownerId}`]);
+      this.router.navigate([`/userprofile/${createdDog.ownerId}`]);
       this.createdDog = {
-        name: '',
-        age: 0,
-        breed: '',
+        name: "",
+        age: 1,
+        breed: "",
         personalityIds: [],
-        ownerId: 0
+        ownerId: undefined,
       }
     })
   }
@@ -65,8 +67,11 @@ export class CreateDogComponent implements OnInit {
 
   getPersonalities() {
     this.personalityService.getPersonalities(this.token).subscribe(p => {
-      this.personalities = p; 
-      console.log('personalities', p)
+      this.personalities = p;
     })
+  }
+
+  addPersonalityToDog(id:number){ 
+    this.createdDog.personalityIds.push(id); 
   }
 }

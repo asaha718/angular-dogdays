@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Dog } from 'src/app/dtos/dog';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { DogService } from 'src/app/services/dog.service';
+import { DogResponseDto } from 'src/app/dtos/dog-response-dto';
 
 @Component({
   selector: 'app-home-page',
@@ -11,7 +12,7 @@ import { DogService } from 'src/app/services/dog.service';
 export class HomePageComponent implements OnInit {
 
   token: string | null = "";
-  allDogs: Dog[] = [];
+  allDogs: DogResponseDto[] = [];
 
   constructor(private lsService: LocalStorageService, private dogService: DogService) { }
 

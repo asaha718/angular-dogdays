@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CreateDogDto } from 'src/app/dtos/create-dog-dto';
 import { Dog } from 'src/app/dtos/dog';
 import { DogService } from 'src/app/services/dog.service';
 import { JwtClientService } from 'src/app/services/jwt-client.service';
@@ -15,12 +16,12 @@ export class UpdateDogComponent implements OnInit {
   ownerId: number | undefined;
   dogId?: number;
 
-  updatedDog: Dog = {
-    name: '',
-    age: 0,
-    breed: '',
+  updatedDog: CreateDogDto = {
+    name: "",
+    age: 1,
+    breed: "",
     personalityIds: [],
-    ownerId: undefined
+    ownerId: undefined,
   }
 
   constructor(private router: Router,
@@ -61,8 +62,8 @@ export class UpdateDogComponent implements OnInit {
     })
   }
 
-  onUpdateDog(updatedDog: Dog){ 
-    this.dogService.updateDog(this.token, updatedDog, this.ownerId).subscribe(dog=> { 
+  onUpdateDog(updatedDog: CreateDogDto){ 
+    this.dogService.updateDog(this.token, updatedDog, this.dogId).subscribe(dog=> { 
       this.router.navigate([`/userprofile/${this.updatedDog.ownerId}`]); 
       this.updatedDog = {
         name: '',

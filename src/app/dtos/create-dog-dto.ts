@@ -3,5 +3,5 @@ export interface CreateDogDto {
     age:number, 
     breed:string, 
     personalityIds: number[], 
-    ownerId:number
+    ownerId?:number
 }

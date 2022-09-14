@@ -54,13 +54,13 @@
     <div class="form-group">
       <!-- chose dropdown because checked boxes took too much time -->
       <label for="personality">Dog personality: </label>
-      <select class="form-control" id="personality" name="personality" required>
-        <!-- [(ngModel)]="createdDog.personalityIds" -->
+      <select class="form-control" id="personality" name="personality">
+        <!-- [(ngModel)]="createdDog.personalityIds -->
         <option>Choose personality that best describes your dog</option>
         <option
           *ngFor="let p of personalities"
-          [value]="p.id"
-          (click)="createdDog.personalityIds.push(p.id)"
+          [attr.value]="p.id"
+          (click)="addPersonalityToDog(p.id)"
           >{{p.trait}}</option
         >
       </select>
