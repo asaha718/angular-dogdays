@@ -11,6 +11,7 @@ import { JwtClientService } from './services/jwt-client.service';
 import { UserProfilePageComponent } from './components/user-profile-page/user-profile-page.component';
 import { DogProfilePageComponent } from './components/dog-profile-page/dog-profile-page.component';
 import { CreateDogComponent } from './components/forms/create-dog/create-dog.component';
+import { UpdateDogComponent } from './components/forms/update-dog/update-dog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { CreateDogComponent } from './components/forms/create-dog/create-dog.com
     HeaderBannerComponent,
     UserProfilePageComponent,
     DogProfilePageComponent,
-    CreateDogComponent
+    CreateDogComponent,
+    UpdateDogComponent
   ],
   imports: [
     BrowserModule,

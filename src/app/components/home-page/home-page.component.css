@@ -18,3 +18,7 @@
 .home-page h2{ 
     text-align: center;
 }
+
+.all-dogs-ctn{ 
+    display: flex;
+}

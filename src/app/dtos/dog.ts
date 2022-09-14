@@ -5,6 +5,7 @@ export interface Dog {
     name:string, 
     age:number, 
     breed:string, 
-    personalityIds: number[], 
+    personalityIds: number[],
+    personalities?: Personality[],  
     ownerId?: number
 }

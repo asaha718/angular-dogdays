@@ -18,7 +18,7 @@ export class DogService {
       .pipe(map(resp => resp))
   }
 
-  getDog(token: string | null, id: number): Observable<Dog> { 
+  getDog(token: string | null, id: number | undefined): Observable<Dog> { 
     let tokenStr = 'Bearer ' + token;
     const headers = new HttpHeaders().set('Authorization', tokenStr);
     return this.http.get<Dog>(`http://localhost:8080/api/dogs/${id}`, { headers })
@@ -31,6 +31,12 @@ export class DogService {
     return this.http.post<Dog>('http://localhost:8080/api/dogs', dog ,{ headers })
       .pipe(map(resp => resp))
   }
+
+  updateDog(token: string | null, dog: Dog, id: number | undefined){ 
+    let tokenStr = 'Bearer ' + token;
+    const headers = new HttpHeaders().set('Authorization', tokenStr);
+    return this.http.put<Dog>(`http://localhost:8080/api/dogs/${id}`, dog, { headers })
+  }; 
 
   deleteDog(token: string | null, id: number | undefined): Observable<unknown>{ 
     let tokenStr = 'Bearer ' + token;

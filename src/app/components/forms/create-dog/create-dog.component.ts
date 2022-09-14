@@ -45,9 +45,9 @@ export class CreateDogComponent implements OnInit {
   }
 
   onDogCreate(createdDog: Dog) {
-    this.dogService.addDog(this.token, this.createdDog).subscribe(dog => {
+    this.dogService.addDog(this.token, createdDog).subscribe(dog => {
       this.router.navigate([`/userprofile/${this.createdDog.ownerId}`]);
-      createdDog = {
+      this.createdDog = {
         name: '',
         age: 0,
         breed: '',
@@ -66,6 +66,7 @@ export class CreateDogComponent implements OnInit {
   getPersonalities() {
     this.personalityService.getPersonalities(this.token).subscribe(p => {
       this.personalities = p; 
+      console.log('personalities', p)
     })
   }
 }

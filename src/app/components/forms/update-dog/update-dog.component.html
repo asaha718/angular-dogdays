@@ -1,0 +1,59 @@
+<app-header-banner></app-header-banner>
+
+<div class="updat-dog-form-page">
+  <h2>Update {{updatedDog.name}} Attributes</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="name">Dog name: </label>
+      <input
+        [(ngModel)]="updatedDog.name"
+        name="name"
+        id="name"
+        type="text"
+        class="form-control"
+        required
+        #name="ngModel"
+      />
+      <div
+        *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="alert alert-danger"
+      >
+        Dog's name is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="age">Dog Age: </label>
+      <input
+        [(ngModel)]="updatedDog.age"
+        name="age"
+        id="age"
+        type="number"
+        class="form-control"
+        required
+        #age="ngModel"
+      />
+      <div
+        *ngIf="age.invalid && (age.dirty || age.touched)"
+        class="alert alert-danger"
+      >
+        Please enter an age
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="breed">Dog breed: </label>
+      <input
+        [(ngModel)]="updatedDog.breed"
+        name="breed"
+        id="breed"
+        type="text"
+        class="form-control"
+      />
+    </div>
+    <div class="update-btn-ctn">
+      <button (click)="onUpdateDog(updatedDog)" class="btn btn-primary">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
