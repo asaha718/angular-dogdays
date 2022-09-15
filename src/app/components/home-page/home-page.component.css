@@ -10,6 +10,25 @@
     width: 24vw;
 }
 
+.card-body{ 
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+.dog-ctn .personality-ctn{ 
+    display: flex;
+    text-align: center;
+    padding: 2px;
+    background-color:blanchedalmond; 
+    border-radius: 12px;
+}
+
+.dog-ctn .personality-ctn:hover{ 
+background-color: rgb(228, 190, 23);
+    opacity: 0.8;
+}
+
 .dog-profile-img {
     height: 28vh;
     width: 16vw;
@@ -21,4 +40,6 @@
 
 .all-dogs-ctn{ 
     display: flex;
+    flex-wrap: wrap;
 }
+
