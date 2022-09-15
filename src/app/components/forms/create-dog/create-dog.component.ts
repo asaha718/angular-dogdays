@@ -71,7 +71,7 @@ export class CreateDogComponent implements OnInit {
     })
   }
 
-  addPersonalityToDog(id:number){ 
-    this.createdDog.personalityIds.push(id); 
+  addPersonalityToDog(id:any){ 
+    this.createdDog.personalityIds.push(Number(id)); 
   }
 }
