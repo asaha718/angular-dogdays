@@ -10,8 +10,10 @@
           <h2 class="card-title">{{dog.name}}</h2>
           <h4 class="card-subtitle">Age: {{dog.age}}</h4>
           <h4 class="card-subtitle">Breed: {{dog.breed}}</h4>
-          <div class="personality-ctn" *ngFor="let p of dog.personalities">
-            <h6>{{p.trait}}</h6>
+          <div class="personalities-ctn" >
+            <div *ngFor="let p of dog.personalities" class="personality-ctn">
+              <h6>{{p.trait}}</h6>
+            </div>
           </div>
         </div>
       </div>
